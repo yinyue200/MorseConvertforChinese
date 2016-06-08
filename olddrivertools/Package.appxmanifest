@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="28471.6247F4E9E37" Publisher="CN=98718F25-8EB8-43A2-B5FE-108FB92BA328" Version="1.1.0.0" />
+  <Identity Name="28471.6247F4E9E37" Publisher="CN=98718F25-8EB8-43A2-B5FE-108FB92BA328" Version="1.0.1.0" />
   <mp:PhoneIdentity PhoneProductId="cb452db2-1aa4-40b6-a8b3-efc35a887457" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>老司机开车神器</DisplayName>
@@ -16,7 +16,8 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="olddrivertools.App">
       <uap:VisualElements DisplayName="老司机开车神器" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="olddrivertools" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png"></uap:DefaultTile>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
+        </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
