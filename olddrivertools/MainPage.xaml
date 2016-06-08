@@ -30,6 +30,13 @@
                 <ComboBoxItem>UTF16BE</ComboBoxItem>
             </ComboBox>
             <CheckBox x:Name="checkbox">反向转换</CheckBox>
+            <Button Click="Button_Click_1">关于
+                <FlyoutBase.AttachedFlyout>
+                    <Flyout>
+                        <HyperlinkButton NavigateUri="http://www.yinyue200.com">© 2016 www.yinyue200.com</HyperlinkButton>
+                    </Flyout>
+                </FlyoutBase.AttachedFlyout>
+            </Button>
         </StackPanel>
 
         <TextBlock TextWrapping="Wrap" x:Name="outputbox"  Grid.Row="2" IsTextSelectionEnabled="True"></TextBlock>
