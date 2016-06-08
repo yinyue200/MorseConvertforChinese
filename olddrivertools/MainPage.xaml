@@ -16,7 +16,7 @@
         <TextBox x:Name="inputbox" Header="要处理的信息" Grid.Row="0"></TextBox>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <Button Click="Button_Click">转换</Button>
-            <ComboBox x:Name="jismichoose" SelectionChanged="jismichoose_SelectionChanged">
+            <ComboBox SelectedIndex="0"  x:Name="jismichoose" SelectionChanged="jismichoose_SelectionChanged">
                 <ComboBoxItem>二进制0和1</ComboBoxItem>
                 <ComboBoxItem>十六进制</ComboBoxItem>
                 <ComboBoxItem>base64</ComboBoxItem>
@@ -24,7 +24,7 @@
                 <ComboBoxItem>莫尔斯电码(中文规则)</ComboBoxItem>
 
             </ComboBox>
-            <ComboBox x:Name="encodingchoose">
+            <ComboBox SelectedIndex="0" x:Name="encodingchoose">
                 <ComboBoxItem>UTF8</ComboBoxItem>
                 <ComboBoxItem>UTF16</ComboBoxItem>
                 <ComboBoxItem>UTF16BE</ComboBoxItem>

@@ -243,3 +243,8 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/olddrivertools/_scale-100.appx
+/olddrivertools/_scale-400.appx
+/olddrivertools/_scale-150.appx
+/olddrivertools/_scale-125.appx
+/olddrivertools/_pkginfo.txt

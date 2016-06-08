@@ -147,10 +147,14 @@ namespace olddrivertools
         }
         private void jismichoose_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(encodingchoose==null)
+            {
+                return;
+            }
             switch(jismichoose.SelectedIndex)
             {
+                case 3:
                 case 4:
-                case 5:
                     encodingchoose.Visibility = Visibility.Collapsed;
                     break;
                 default:
