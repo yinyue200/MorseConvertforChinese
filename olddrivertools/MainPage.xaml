@@ -13,10 +13,10 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="inputbox" Header="要处理的信息" Grid.Row="0"></TextBox>
+        <TextBox x:Name="inputbox" Header="要处理的信息" Grid.Row="0" AcceptsReturn="True"></TextBox>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <Button Click="Button_Click">转换</Button>
-            <ComboBox SelectedIndex="0"  x:Name="jismichoose" SelectionChanged="jismichoose_SelectionChanged">
+            <ComboBox SelectedIndex="0"   x:Name="jismichoose" SelectionChanged="jismichoose_SelectionChanged">
                 <ComboBoxItem>二进制0和1</ComboBoxItem>
                 <ComboBoxItem>十六进制</ComboBoxItem>
                 <ComboBoxItem>base64</ComboBoxItem>
@@ -38,8 +38,9 @@
                 </FlyoutBase.AttachedFlyout>
             </Button>
         </StackPanel>
-
-        <TextBlock TextWrapping="Wrap" x:Name="outputbox"  Grid.Row="2" IsTextSelectionEnabled="True"></TextBlock>
+        <ScrollViewer  Grid.Row="2"  VerticalScrollMode="Enabled">
+            <TextBlock TextWrapping="Wrap" Margin="0,0,30,0" x:Name="outputbox"  IsTextSelectionEnabled="True"></TextBlock>
+        </ScrollViewer>
 
     </Grid>
 </Page>
