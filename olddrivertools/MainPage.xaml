@@ -8,6 +8,31 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="inputbox" Header="要处理的信息" Grid.Row="0"></TextBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Click="Button_Click">转换</Button>
+            <ComboBox x:Name="jismichoose" SelectionChanged="jismichoose_SelectionChanged">
+                <ComboBoxItem>二进制0和1</ComboBoxItem>
+                <ComboBoxItem>十六进制</ComboBoxItem>
+                <ComboBoxItem>base64</ComboBoxItem>
+                <ComboBoxItem>莫尔斯电码(仅英文)</ComboBoxItem>
+                <ComboBoxItem>莫尔斯电码(中文规则)</ComboBoxItem>
+
+            </ComboBox>
+            <ComboBox x:Name="encodingchoose">
+                <ComboBoxItem>UTF8</ComboBoxItem>
+                <ComboBoxItem>UTF16</ComboBoxItem>
+                <ComboBoxItem>UTF16BE</ComboBoxItem>
+            </ComboBox>
+            <CheckBox x:Name="checkbox">反向转换</CheckBox>
+        </StackPanel>
+
+        <TextBlock TextWrapping="Wrap" x:Name="outputbox"  Grid.Row="2" IsTextSelectionEnabled="True"></TextBlock>
 
     </Grid>
 </Page>
