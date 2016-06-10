@@ -1,0 +1,40 @@
+﻿<Window x:Class="olddrivertoosexe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:olddrivertoosexe"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="inputbox"  Grid.Row="0" AcceptsReturn="True"></TextBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Click="Button_Click">转换</Button>
+            <ComboBox SelectedIndex="0"   x:Name="jismichoose" SelectionChanged="jismichoose_SelectionChanged">
+                <ComboBoxItem>二进制0和1</ComboBoxItem>
+                <ComboBoxItem>十六进制</ComboBoxItem>
+                <ComboBoxItem>base64</ComboBoxItem>
+                <ComboBoxItem>莫尔斯电码(仅英文)</ComboBoxItem>
+                <ComboBoxItem>莫尔斯电码(中文规则)</ComboBoxItem>
+
+            </ComboBox>
+            <ComboBox SelectedIndex="0" x:Name="encodingchoose">
+                <ComboBoxItem>UTF8</ComboBoxItem>
+                <ComboBoxItem>UTF16</ComboBoxItem>
+                <ComboBoxItem>UTF16BE</ComboBoxItem>
+            </ComboBox>
+            <CheckBox x:Name="checkbox">反向转换</CheckBox>
+            <Button Click="Button_Click_1">关于
+            </Button>
+        </StackPanel>
+        <ScrollViewer  Grid.Row="2" >
+            <TextBox IsReadOnly="True" TextWrapping="Wrap" Margin="0,0,30,0" x:Name="outputbox" ></TextBox>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

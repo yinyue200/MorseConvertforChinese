@@ -5,6 +5,7 @@
     xmlns:local="using:olddrivertools"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winrtxaml="using:WinRTXamlToolkit.Controls"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -14,22 +15,25 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBox x:Name="inputbox" Header="要处理的信息" Grid.Row="0" AcceptsReturn="True"></TextBox>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button Click="Button_Click">转换</Button>
-            <ComboBox SelectedIndex="0"   x:Name="jismichoose" SelectionChanged="jismichoose_SelectionChanged">
+        <winrtxaml:WrapPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="zhuanhuanbutton" Click="Button_Click">转换</Button>
+            <Button x:Name="jiantieb" Click="Button_Click">从剪贴板转换</Button>
+            <CheckBox x:Name="onlycl">转换结果仅复制到剪贴板</CheckBox>
+            <ComboBox SelectedIndex="2"   x:Name="jismichoose" SelectionChanged="jismichoose_SelectionChanged">
                 <ComboBoxItem>二进制0和1</ComboBoxItem>
                 <ComboBoxItem>十六进制</ComboBoxItem>
                 <ComboBoxItem>base64</ComboBoxItem>
                 <ComboBoxItem>莫尔斯电码(仅英文)</ComboBoxItem>
                 <ComboBoxItem>莫尔斯电码(中文规则)</ComboBoxItem>
-
             </ComboBox>
-            <ComboBox SelectedIndex="0" x:Name="encodingchoose">
+            <ComboBox SelectedIndex="0" x:Name="encodingchoose" SelectionChanged="encodingchoose_SelectionChanged">
                 <ComboBoxItem>UTF8</ComboBoxItem>
                 <ComboBoxItem>UTF16</ComboBoxItem>
                 <ComboBoxItem>UTF16BE</ComboBoxItem>
+                <ComboBoxItem>结果输出为二进制文件(仅反向转换开启时有效)</ComboBoxItem>
             </ComboBox>
-            <CheckBox x:Name="checkbox">反向转换</CheckBox>
+            <Button x:Name="choosefile" Click="choosefile_Click">选择文件</Button>
+            <CheckBox x:Name="checkbox" Unchecked="checkbox_Unchecked" Checked="checkbox_Checked">反向转换</CheckBox>
             <Button Click="Button_Click_1">关于
                 <FlyoutBase.AttachedFlyout>
                     <Flyout>
@@ -37,7 +41,7 @@
                     </Flyout>
                 </FlyoutBase.AttachedFlyout>
             </Button>
-        </StackPanel>
+        </winrtxaml:WrapPanel>
         <ScrollViewer  Grid.Row="2"  VerticalScrollMode="Enabled">
             <TextBlock TextWrapping="Wrap" Margin="0,0,30,0" x:Name="outputbox"  IsTextSelectionEnabled="True"></TextBlock>
         </ScrollViewer>
