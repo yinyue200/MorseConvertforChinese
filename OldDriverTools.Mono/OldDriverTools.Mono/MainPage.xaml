@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:OldDriverTools.Mono"
+             x:Class="OldDriverTools.Mono.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid  Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label>要处理的信息</Label>
+            <Editor Grid.Row="1" x:Name="inputbox" />
+        </Grid>
+
+        <local:WrapLayout Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="zhuanhuanbutton" Clicked="Button_Click" Text="转换"></Button>
+            <Button x:Name="jiantieb" Clicked="Button_Click" Text="从剪贴板转换"></Button>
+            <local:CheckBox x:Name="onlycl" Text="转换结果仅复制到剪贴板"></local:CheckBox>
+            <Picker WidthRequest="200" x:Name="jismichoose" SelectedIndexChanged="jismichoose_SelectionChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>二进制0和1</x:String>
+                        <x:String>十六进制</x:String>
+                        <x:String>base64</x:String>
+                        <x:String>莫尔斯电码(仅英文)</x:String>
+                        <x:String>莫尔斯电码(中文规则)</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker WidthRequest="100" x:Name="encodingchoose" SelectedIndexChanged="encodingchoose_SelectionChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>UTF8</x:String>
+                        <x:String>UTF16</x:String>
+                        <x:String>UTF16BE</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <local:CheckBox x:Name="checkbox" Checked="checkbox_Checked" Text="反向转换"></local:CheckBox>
+            <Button Clicked="Button_Click_1" Text="关于"></Button>
+        </local:WrapLayout>
+        <ScrollView  Grid.Row="2">
+            <Label LineBreakMode="CharacterWrap" Margin="0,0,30,0" x:Name="outputbox" ></Label>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>
