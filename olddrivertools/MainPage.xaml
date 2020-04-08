@@ -5,17 +5,17 @@
     xmlns:local="using:olddrivertools"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:winrtxaml="using:WinRTXamlToolkit.Controls"
+    xmlns:winrtxaml="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Padding="10" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBox x:Name="inputbox" Header="要处理的信息" Grid.Row="0" AcceptsReturn="True"></TextBox>
-        <winrtxaml:WrapPanel Grid.Row="1" Orientation="Horizontal">
+        <winrtxaml:WrapPanel HorizontalSpacing="5" VerticalSpacing="5" Grid.Row="1" Orientation="Horizontal" Margin="0,5,0,5">
             <Button x:Name="zhuanhuanbutton" Click="Button_Click">转换</Button>
             <Button x:Name="jiantieb" Click="Button_Click">从剪贴板转换</Button>
             <CheckBox x:Name="onlycl">转换结果仅复制到剪贴板</CheckBox>
