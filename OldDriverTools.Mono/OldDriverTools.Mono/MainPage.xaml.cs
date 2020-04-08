@@ -54,7 +54,7 @@ namespace OldDriverTools.Mono
                                 break;
                             case 2:
                                 content = Convert.FromBase64String(input);
-                                return;
+                                break;
                             case 3:
                                 output = MorseConvert.morse2word(input);
                                 return;

@@ -19,7 +19,20 @@ namespace olddrivertools
         {
             this.InitializeComponent();
         }
-
+        private System.Text.Encoding GetEnco()
+        {
+            switch (encodingchoose.SelectedIndex)
+            {
+                case 0:
+                    return System.Text.Encoding.UTF8;
+                case 1:
+                    return System.Text.Encoding.Unicode;
+                case 2:
+                    return System.Text.Encoding.BigEndianUnicode;
+                default:
+                    return System.Text.Encoding.ASCII;
+            }
+        }
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             string output = string.Empty;
@@ -52,7 +65,7 @@ namespace olddrivertools
                                 break;
                             case 2:
                                 content = Convert.FromBase64String(input);
-                                return;
+                                break;
                             case 3:
                                 output = MorseConvert.morse2word(input);
                                 return;
@@ -60,18 +73,7 @@ namespace olddrivertools
                                 output = MorseConvertChinese.morse2word(input);
                                 return;
                         }
-                        switch (encodingchoose.SelectedIndex)
-                        {
-                            case 0:
-                                output = System.Text.Encoding.UTF8.GetString(content);
-                                break;
-                            case 1:
-                                output = System.Text.Encoding.Unicode.GetString(content);
-                                break;
-                            case 2:
-                                output = System.Text.Encoding.BigEndianUnicode.GetString(content);
-                                break;
-                        }
+                        output = GetEnco().GetString(content);
                     }
                     finally
                     {
@@ -93,18 +95,7 @@ namespace olddrivertools
                 else
                 {
                     byte[] content = null;
-                    switch (encodingchoose.SelectedIndex)
-                    {
-                        case 0:
-                            content = System.Text.Encoding.UTF8.GetBytes(input);
-                            break;
-                        case 1:
-                            content = System.Text.Encoding.Unicode.GetBytes(input);
-                            break;
-                        case 2:
-                            content = System.Text.Encoding.BigEndianUnicode.GetBytes(input);
-                            break;
-                    }
+                    content = GetEnco().GetBytes(input);
                     output = bintostring(content);
                 }
             }
